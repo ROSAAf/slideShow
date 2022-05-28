@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Silde Show</title>
+    <style>
+        #gallery {
+            width: 500px;
+            height: 430px;
+            margin: 0 auto;
+        }
+        #large {
+            width: 500px;
+            height: 300px;
+            text-align: center;
+        }
+        #thumbnail {
+            width: 500px;
+            height: 128px;
+            text-align: center;
+        }
+        #showAll {
+            width: 600px;
+            height: 300px;
+            border: 5px solid green;
+            margin: auto;
+            position: relative;
+            overflow: hidden;
+        }
+        #showAll div{
+            width: 600px;
+            height: 300px;
+            font-size: 45px;
+            opacity: 0.9;
+            color: #fff;
+            text-shadow: 1px 1px 4px blue;
+            text-align: center;
+        }
+        
+
+</style>
+<script src="jquery.min.js"></script>
+</head>
+<body>
+    <div id="gallery">
+        <div id="large">
+            <img id="pic" width="495" height="300">
+        </div>
+        <div id="thumbnail">
+            <img src="Gastroenterology.jpg" alt="Gastroenterology" width="120">
+            <img src="Neurology.jpg" alt="" width="120">
+            <img src="Oncology.jpg" alt="" width="120">
+            <img src="Orthopeadics.jpg" alt="" width="120">
+        </div>
+    </div>
+    <script>
+        var counter = 0;
+        var image = document.getElementById("pic");
+        function picChanging() {
+            var array = ["Gastroenterology.jpg","Neurology.jpg","Oncology.jpg","Orthopeadics.jpg"];
+            image.setAttribute("src",array[counter]);
+            counter++;
+            if(counter>array.length-1){
+                counter=0;
+            }
+            setTimeout(picChanging,2000);
+        }
+    setTimeout(picChanging);        
+    </script>
+</body>
+</html>
